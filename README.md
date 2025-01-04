@@ -4,6 +4,11 @@
 
 Resume Builder is a modern, user-friendly web application designed to help professionals create stunning resumes and cover letters with ease. Built with React and powered by cutting-edge technologies, this platform simplifies the job application process.
 
+## WEBSITE
+
+![Screenshot (155)](https://github.com/user-attachments/assets/59e7cd52-3b8b-4b0d-ba8f-8624c383c117)
+
+
 ## ✨ Features
 
 - **Resume Creation**: Intuitive interface for building professional resumes
