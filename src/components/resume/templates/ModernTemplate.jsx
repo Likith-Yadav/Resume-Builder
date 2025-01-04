@@ -31,41 +31,40 @@ const markdownStyles = {
 
 export default function ModernTemplate({ content }) {
     return (
-        <div className="max-w-4xl mx-auto bg-white p-8 shadow-lg">
+        <div className="max-w-4xl mx-auto bg-white p-4 shadow-lg break-inside-avoid-page">
             {/* Header */}
-            <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <div className="text-center mb-4">
+                <h1 className="text-2xl font-bold text-gray-900 mb-1">
                     {content.personalInfo.fullName}
                 </h1>
-                <div className="text-gray-600">
-                    <p>{content.personalInfo.email} | {content.personalInfo.phone}</p>
-                    <p>{content.personalInfo.location}</p>
+                <div className="text-gray-600 text-sm">
+                    <p>{content.personalInfo.email} | {content.personalInfo.phone} | {content.personalInfo.location}</p>
                 </div>
             </div>
 
             {/* Summary */}
             {content.summary && (
-                <section className="mb-6">
-                    <h2 className="text-xl font-bold text-gray-900 border-b-2 border-indigo-600 mb-4">
+                <section className="mb-3">
+                    <h2 className="text-lg font-bold text-gray-900 border-b-2 border-indigo-600 mb-2">
                         Professional Summary
                     </h2>
-                    <p className="text-gray-700">{content.summary}</p>
+                    <p className="text-gray-700 text-sm">{content.summary}</p>
                 </section>
             )}
 
             {/* Work Experience */}
             {content.experience && content.experience.length > 0 && (
-                <section className="mb-6">
-                    <h2 className="text-xl font-bold text-gray-900 border-b-2 border-indigo-600 mb-4">
+                <section className="mb-3">
+                    <h2 className="text-lg font-bold text-gray-900 border-b-2 border-indigo-600 mb-2">
                         Work Experience
                     </h2>
                     {content.experience.map((exp, index) => (
-                        <div key={index} className="mb-4">
+                        <div key={index} className="mb-2">
                             <div className="flex justify-between items-center">
-                                <h3 className="text-lg font-semibold text-gray-800">
+                                <h3 className="text-md font-semibold text-gray-800">
                                     {exp.position} | {exp.company}
                                 </h3>
-                                <p className="text-gray-600">{exp.duration}</p>
+                                <p className="text-gray-600 text-sm">{exp.duration}</p>
                             </div>
                             <ReactMarkdown 
                                 components={{
@@ -74,7 +73,7 @@ export default function ModernTemplate({ content }) {
                                     )
                                 }}
                                 remarkPlugins={[remarkGfm]}
-                                className="text-gray-700 mt-2"
+                                className="text-gray-700 text-sm mt-1"
                             >
                                 {exp.description}
                             </ReactMarkdown>
@@ -85,22 +84,22 @@ export default function ModernTemplate({ content }) {
 
             {/* Education */}
             {content.education && content.education.length > 0 && (
-                <section className="mb-6">
-                    <h2 className="text-xl font-bold text-gray-900 border-b-2 border-indigo-600 mb-4">
+                <section className="mb-3">
+                    <h2 className="text-lg font-bold text-gray-900 border-b-2 border-indigo-600 mb-2">
                         Education
                     </h2>
                     {content.education.map((edu, index) => (
-                        <div key={index} className="mb-4">
+                        <div key={index} className="mb-2">
                             <div className="flex justify-between items-center">
-                                <h3 className="text-lg font-semibold text-gray-800">
+                                <h3 className="text-md font-semibold text-gray-800">
                                     {edu.degree} | {edu.institution}
                                 </h3>
-                                <p className="text-gray-600">{edu.duration}</p>
+                                <p className="text-gray-600 text-sm">{edu.duration}</p>
                             </div>
                             {edu.description && (
-                                <p className="text-gray-700 mt-2">{edu.description}</p>
+                                <p className="text-gray-700 text-sm mt-1">{edu.description}</p>
                             )}
-                            {edu.gpa && <p className="text-gray-700">GPA: {edu.gpa}</p>}
+                            {edu.gpa && <p className="text-gray-700 text-sm">GPA: {edu.gpa}</p>}
                         </div>
                     ))}
                 </section>
@@ -108,15 +107,15 @@ export default function ModernTemplate({ content }) {
 
             {/* Skills */}
             {content.skills && content.skills.length > 0 && (
-                <section className="mb-6">
-                    <h2 className="text-xl font-bold text-gray-900 border-b-2 border-indigo-600 mb-4">
+                <section className="mb-3">
+                    <h2 className="text-lg font-bold text-gray-900 border-b-2 border-indigo-600 mb-2">
                         Skills
                     </h2>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1">
                         {content.skills.map((skill, index) => (
                             <span 
                                 key={index} 
-                                className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm"
+                                className="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full text-xs"
                             >
                                 {skill}
                             </span>
@@ -127,18 +126,18 @@ export default function ModernTemplate({ content }) {
 
             {/* Projects */}
             {content.projects && content.projects.length > 0 && (
-                <section className="mb-6">
-                    <h2 className="text-xl font-bold text-gray-900 border-b-2 border-indigo-600 mb-4">
+                <section className="mb-3">
+                    <h2 className="text-lg font-bold text-gray-900 border-b-2 border-indigo-600 mb-2">
                         Projects
                     </h2>
                     {content.projects.map((project, index) => (
-                        <div key={index} className="mb-4">
+                        <div key={index} className="mb-2">
                             <div className="flex justify-between items-center">
-                                <h3 className="text-lg font-semibold text-gray-800">
+                                <h3 className="text-md font-semibold text-gray-800">
                                     {project.name}
                                 </h3>
                                 {project.technologies && (
-                                    <p className="text-gray-600">{project.technologies}</p>
+                                    <p className="text-gray-600 text-sm">{project.technologies}</p>
                                 )}
                             </div>
                             <ReactMarkdown 
@@ -148,7 +147,7 @@ export default function ModernTemplate({ content }) {
                                     )
                                 }}
                                 remarkPlugins={[remarkGfm]}
-                                className="text-gray-700 mt-2"
+                                className="text-gray-700 text-sm mt-1"
                             >
                                 {project.description}
                             </ReactMarkdown>
@@ -159,20 +158,20 @@ export default function ModernTemplate({ content }) {
 
             {/* Certifications */}
             {content.certifications && content.certifications.length > 0 && (
-                <section className="mb-6">
-                    <h2 className="text-xl font-bold text-gray-900 border-b-2 border-indigo-600 mb-4">
+                <section className="mb-3">
+                    <h2 className="text-lg font-bold text-gray-900 border-b-2 border-indigo-600 mb-2">
                         Certifications
                     </h2>
                     {content.certifications.map((cert, index) => (
-                        <div key={index} className="mb-4">
+                        <div key={index} className="mb-2">
                             <div className="flex justify-between items-center">
-                                <h3 className="text-lg font-semibold text-gray-800">
+                                <h3 className="text-md font-semibold text-gray-800">
                                     {cert.name}
                                 </h3>
-                                <p className="text-gray-600">{cert.dateObtained}</p>
+                                <p className="text-gray-600 text-sm">{cert.dateObtained}</p>
                             </div>
                             {cert.issuingOrganization && (
-                                <p className="text-gray-700">{cert.issuingOrganization}</p>
+                                <p className="text-gray-700 text-sm">{cert.issuingOrganization}</p>
                             )}
                         </div>
                     ))}
@@ -181,15 +180,15 @@ export default function ModernTemplate({ content }) {
 
             {/* Hobbies */}
             {content.hobbies && content.hobbies.length > 0 && (
-                <section className="mb-6">
-                    <h2 className="text-xl font-bold text-gray-900 border-b-2 border-indigo-600 mb-4">
+                <section className="mb-3">
+                    <h2 className="text-lg font-bold text-gray-900 border-b-2 border-indigo-600 mb-2">
                         Hobbies
                     </h2>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1">
                         {content.hobbies.map((hobby, index) => (
                             <span 
                                 key={index} 
-                                className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm"
+                                className="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full text-xs"
                             >
                                 {hobby}
                             </span>
