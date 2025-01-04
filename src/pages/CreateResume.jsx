@@ -741,10 +741,17 @@ export default function CreateResume() {
                                         {section.name}
                                     </button>
                                 ))}
+                                <button
+                                    onClick={handleCreateResume}
+                                    className="w-full text-left px-4 py-3 rounded-lg transition-all duration-300 ease-in-out flex items-center text-gray-700 hover:bg-indigo-100"
+                                >
+                                    <FaMagic className="mr-3" />
+                                    Create Resume
+                                </button>
                             </div>
                             
                             {/* Dynamic Form */}
-                            <div>
+                            <div className="bg-white shadow-md rounded-lg p-6">
                                 {renderSectionForm()}
                             </div>
                         </div>
