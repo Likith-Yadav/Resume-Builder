@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg 
+   xmlns="http://www.w3.org/2000/svg" 
+   width="512" 
+   height="512" 
+   viewBox="0 0 512 512">
+  
+  <!-- Background Rectangle -->
+  <rect 
+    width="512" 
+    height="512" 
+    rx="80" 
+    fill="#4F46E5"/>
+  
+  <!-- Document/Resume Icon -->
+  <path 
+    d="M128 96 C105.9 96 88 113.9 88 136V376C88 398.1 105.9 416 128 416H384C406.1 416 424 398.1 424 376V136C424 113.9 406.1 96 384 96H128Z" 
+    fill="white" 
+    stroke="#FFFFFF" 
+    stroke-width="20"/>
+  
+  <!-- Lines representing text -->
+  <line 
+    x1="160" 
+    y1="200" 
+    x2="352" 
+    y2="200" 
+    stroke="white" 
+    stroke-width="24" 
+    stroke-linecap="round"/>
+  
+  <line 
+    x1="160" 
+    y1="280" 
+    x2="288" 
+    y2="280" 
+    stroke="white" 
+    stroke-width="24" 
+    stroke-linecap="round"/>
+  
+  <line 
+    x1="160" 
+    y1="360" 
+    x2="224" 
+    y2="360" 
+    stroke="white" 
+    stroke-width="24" 
+    stroke-linecap="round"/>
+</svg>
